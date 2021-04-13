@@ -39,8 +39,7 @@ const listSchema = {
 const List = mongoose.model( "List", listSchema );
 
 Item.insertMany( defaultItems, function(err) {
-  if ( err )
-  {
+  if ( err ) {
     console.log( err );
   }
 });
@@ -57,9 +56,9 @@ app.get("/", function(req, res) {
         });
       }
       res.render("list", {listTitle: "Today", newListItems: result});
-  });
+  } );
 
- });
+ } );
 
 app.post("/", function(req, res){
 
@@ -140,10 +139,6 @@ app.get( "/:customListName", function( req, res ) {
         }
     } )
 })
-
-// app.get("/work", function(req,res){
-//   res.render("list", {listTitle: "Work List", newListItems: workItems});
-// });
 
 app.get("/about", function(req, res){
   res.render("about");
